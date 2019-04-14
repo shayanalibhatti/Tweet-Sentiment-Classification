@@ -19,4 +19,4 @@ Sadness_training_set: emotion intensity threshold 0.5 384 lines
 
 In total we have 1547 lines in training data and total 4895 unique words that includes emoticons
 
-I would like to give credit to this article "https://machinelearnings.co/text-classification-using-neural-networks-f5cd7b8765c6" for useful insights that helped me learn about this project and while the article is based on "Text classification using 2 layer neural network", I did Tweet sentiment classification using single layer neural network.
+I would like to give credit to this article "https://machinelearnings.co/text-classification-using-neural-networks-f5cd7b8765c6" for useful insights that helped me learn about this project and while the article is based on text classification using 2 hidden layer neural network with sigmoid activation function, I did Tweet sentiment classification using single hidden layer neural network with Relu activation function.
