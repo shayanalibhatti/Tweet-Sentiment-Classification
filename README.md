@@ -1,4 +1,11 @@
-# Tweet-Sentiment-Classification
+Tweet Sentiment Classification
+===
+In this project, I implemented a sentiment classification algorithm using single hidden layer neural network that classifies the sentiment of a tweet/sentence giving the dominant emotion(s) e.g. anger,sadness,fear or joy in the text.
+
+<image>  </image>
+
+How It Works
+-------
 In this project i read a large Tweet dataset and clean each tweet then use Stemming and using bag of words model, feed each tweet to single layer neural network for classification. Link for dataset is given below:
         http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
 
@@ -19,4 +26,6 @@ Sadness_training_set: emotion intensity threshold 0.5 384 lines
 
 In total I have 1547 lines in training data and total 4895 unique words that includes emoticons
 
+Acknowledgement
+----------------
 I would like to give credit to this article "https://machinelearnings.co/text-classification-using-neural-networks-f5cd7b8765c6" for useful insights that helped me learn about this project and while the article is based on text classification using 2 hidden layer neural network with sigmoid activation function, I did Tweet sentiment classification using single hidden layer neural network with Relu activation function.
