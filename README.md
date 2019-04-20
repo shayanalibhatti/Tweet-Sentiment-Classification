@@ -2,11 +2,11 @@ Tweet Sentiment Classification
 ===
 In this project, I implemented a sentiment classification algorithm using single hidden layer neural network that classifies the sentiment of a tweet/sentence giving the dominant emotion(s) e.g. anger,sadness,fear or joy in the text.
 
-<image>  </image>
+![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
 
-How It Works
+Details
 -------
-In this project i read a large Tweet dataset and clean each tweet then use Stemming and using bag of words model, feed each tweet to single layer neural network for classification. Link for dataset is given below:
+We read a large Tweet dataset and clean each tweet then use Stemming and using bag of words model, feed each tweet to single layer neural network for classification. Link for dataset is given below:
         http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
 
 This link has 4 kinds of dataset: one for anger, one for fear, one for joy and one for sadness for training set and 4 files for test set. Each of these datasets have the following format:
@@ -24,8 +24,45 @@ Joy_training_set: emotion intensity threshold 0.5 405 lines
 
 Sadness_training_set: emotion intensity threshold 0.5 384 lines
 
-In total I have 1547 lines in training data and total 4895 unique words that includes emoticons
+In total I have 1547 lines in training data and total 3783 unique words that includes emoticons
 
-Acknowledgement
+# Working of Software
+The working of software is categorized into following steps:
+
+## Preprocessing of the text
+First we get rid of numbers, punctuations and extra spaces in every tweet/sentence text string. We also remove @<tags> becasuse we dont need them. This is done in the clean_data method of the code.
+
+### 1)	Tokenization
+We create a bag of words which is just a dictionary of the words and their frequencies with which they appear in a text string line.
+For example “How are you my friend?” when tokenized becomes a list of words as:
+[‘How’,’are’,’you’,’my’,’friend’,’?’]
+This is also done in the clean_data method of the code.
+
+### 2)   Stemming
+Stemming in text processing means cutting the word to its origin for example, walking, walked and walker have stem “walk”. NLTK toolkit in Python has different kinds of stemmers such as Porter, Lancaster stemmer. We are using Lancaster Stemmer for our software. This function is implemented in the bag_of_words method of code.
+
+### 3)   Bag of Words
+Neural network cannot process words so we encode the words in tweets according to the total number of distinct words we have in all the tweets of the whole training set. We have 3783 unique words so we make a list 3783 elements long and in each tweet sentence we put a 1 where the word in tweet matches the word in those 3783 unique words and 0 otherwise. This function is implemented in bag_of_words and encode_sentence method of code.
+
+## Neural Network Classifier
+Now we create a classifier using Neural networks for which we will start with a single hidden layer RELU activation function neural network with dimensions equal to (bag of words length i.e. 3783) x (training samples i.e. 1547). And see what results we get. The last layer will be of softmax activation function with 4 units as we have 4 classes i.e. sadness, anger, joy and fear.
+
+### Classification stats
+We trained our single hidden layer neural network for just 50 EPOCHS and it gives the following stats at the end of 50 EPOCHS:
+
+              precision    recall  f1-score   support
+
+           0       1.00      0.98      0.99       417
+           1       0.98      0.97      0.98       349
+           2       0.96      0.98      0.97       377
+           3       0.99      0.99      0.99       404
+
+   micro avg       0.98      0.98      0.98      1547
+   macro avg       0.98      0.98      0.98      1547
+weighted avg       0.98      0.98      0.98      1547
+
+
+
+## Acknowledgement
 ----------------
 I would like to give credit to this article "https://machinelearnings.co/text-classification-using-neural-networks-f5cd7b8765c6" for useful insights that helped me learn about this project and while the article is based on text classification using 2 hidden layer neural network with sigmoid activation function, I did Tweet sentiment classification using single hidden layer neural network with Relu activation function.
