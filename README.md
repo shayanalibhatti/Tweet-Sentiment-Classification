@@ -57,10 +57,12 @@ We trained our single hidden layer neural network for just 50 EPOCHS and it give
            2       0.96      0.98      0.97       377
            3       0.99      0.99      0.99       404
 
-   micro avg       0.98      0.98      0.98      1547
-   macro avg       0.98      0.98      0.98      1547
-weighted avg       0.98      0.98      0.98      1547
+![all_curves](https://user-images.githubusercontent.com/41015749/56461263-313e4a00-6375-11e9-9ae0-ee53366f3440.png)
 
+# Results
+Giving a real-time tweet or a sentence to this software gives the classification to us. Following image shows the result. We show all the emotions expressed by the text if their magnitude is greater than 0.2.
+
+![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
 
 
 ## Acknowledgement
