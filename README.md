@@ -64,7 +64,7 @@ Giving a real-time tweet or a sentence to this software gives the classification
 
 ![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
 
-It can be seen in image above that the classifier predicts the right emotion in each tweet, however, in the last sentence, "I want to be happy", the classifier thinks that "joy" is expressed in the sentence which is not correct. This is where LSTM (Long Short Term Models) will be effective as using previous word of a sentence will help understand context of the sentence. Still this one does a pretty good job. In the next tutorial i am going to extend this project to a "Depression Assistant". Please give a STAR if you liked this project.
+It can be seen in image above that the classifier predicts the right emotion in each tweet. The 4th tweet doesnt strongly express any emotion hence we see a presence of all classes. However, in the last sentence, "I want to be happy", the classifier thinks that "joy" is expressed in the sentence which is not correct. This is where LSTM (Long Short Term Models) will be effective as using previous word of a sentence will help understand context of the sentence. Still this one does a pretty good job. In the next tutorial i am going to extend this project to a "Depression Assistant". Please give a STAR if you liked this project.
 
 ## Acknowledgement
 ----------------
