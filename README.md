@@ -26,25 +26,25 @@ Sadness_training_set: emotion intensity threshold 0.5 384 lines
 
 In total I have 1547 lines in training data and total 3783 unique words that includes emoticons
 
-# Working of Software
+### Working of Software
 The working of software is categorized into following steps:
 
-## Preprocessing of the text
+### Preprocessing of the text
 First we get rid of numbers, punctuations and extra spaces in every tweet/sentence text string. We also remove @<tags> becasuse we dont need them. This is done in the clean_data method of the code.
 
-### 1)	Tokenization
+#### 1)	Tokenization
 We create a bag of words which is just a dictionary of the words and their frequencies with which they appear in a text string line.
 For example “How are you my friend?” when tokenized becomes a list of words as:
 [‘How’,’are’,’you’,’my’,’friend’,’?’]
 This is also done in the clean_data method of the code.
 
-### 2)   Stemming
+#### 2)   Stemming
 Stemming in text processing means cutting the word to its origin for example, walking, walked and walker have stem “walk”. NLTK toolkit in Python has different kinds of stemmers such as Porter, Lancaster stemmer. We are using Lancaster Stemmer for our software. This function is implemented in the bag_of_words method of code.
 
-### 3)   Bag of Words
+#### 3)   Bag of Words
 Neural network cannot process words so we encode the words in tweets according to the total number of distinct words we have in all the tweets of the whole training set. We have 3783 unique words so we make a list 3783 elements long and in each tweet sentence we put a 1 where the word in tweet matches the word in those 3783 unique words and 0 otherwise. This function is implemented in bag_of_words and encode_sentence method of code.
 
-## Neural Network Classifier
+### Neural Network Classifier
 Now we create a classifier using Neural networks for which we will start with a single hidden layer RELU activation function neural network with dimensions equal to (bag of words length i.e. 3783) x (training samples i.e. 1547). And see what results we get. The last layer will be of softmax activation function with 4 units as we have 4 classes i.e. sadness, anger, joy and fear.
 
 ### Classification stats
@@ -59,11 +59,12 @@ We trained our single hidden layer neural network for just 50 EPOCHS and it give
 
 ![all_curves](https://user-images.githubusercontent.com/41015749/56461263-313e4a00-6375-11e9-9ae0-ee53366f3440.png)
 
-# Results
+## Results
 Giving a real-time tweet or a sentence to this software gives the classification to us. Following image shows the result. We show all the emotions expressed by the text if their magnitude is greater than 0.2.
 
 ![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
 
+It can be seen in image above that the classifier predicts the right emotion in each tweet, however, in the last sentence, "I want to be happy", the classifier thinks that "joy" is expressed in the sentence which is not correct. This is where LSTM (Long Short Term Models) will be effective as using previous word of a sentence will help understand context of the sentence. Still this one does a pretty good job. In the next tutorial i am going to extend this project to a "Depression Assistant". Please give a STAR if you liked this project.
 
 ## Acknowledgement
 ----------------
