@@ -2,7 +2,7 @@ Tweet Sentiment Classification
 ===
 In this project, I implemented a sentiment classification algorithm using single hidden layer neural network that classifies the sentiment of a tweet/sentence giving the dominant emotion(s) e.g. anger,sadness,fear or joy in the text.
 
-![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
+![results](https://github.com/shayanalibhatti/Tweet-sentiment-classification/blob/master/results.jpg?raw=true)
 
 Details
 -------
@@ -57,12 +57,12 @@ We trained our single hidden layer neural network for just 50 EPOCHS and it give
            2       0.96      0.98      0.97       377
            3       0.99      0.99      0.99       404
 
-![all_curves](https://user-images.githubusercontent.com/41015749/56461263-313e4a00-6375-11e9-9ae0-ee53366f3440.png)
+![all_curves](https://github.com/shayanalibhatti/Tweet-sentiment-classification/blob/master/all_curves.png?raw=true)
 
 ## Results
 Giving a real-time tweet or a sentence to this software gives the classification to us. Following image shows the result. We show all the emotions expressed by the text if their magnitude is greater than 0.2.
 
-![results](https://user-images.githubusercontent.com/41015749/56460488-27aee500-6369-11e9-8518-69e9e2f8cd65.jpg)
+![results](https://github.com/shayanalibhatti/Tweet-sentiment-classification/blob/master/results.jpg?raw=true)
 
 It can be seen in image above that the classifier predicts the right emotion in each tweet. The 4th tweet doesnt strongly express any emotion hence we see a presence of all classes. However, in the last sentence, "I want to be happy", the classifier thinks that "joy" is expressed in the sentence which is not correct. This is where LSTM (Long Short Term Models) will be effective as using previous word of a sentence will help understand context of the sentence. Still this one does a pretty good job. In the next tutorial i am going to extend this project to a "Depression Assistant". Please give a STAR if you liked this project.
 
